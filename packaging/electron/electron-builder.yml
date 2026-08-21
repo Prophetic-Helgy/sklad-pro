@@ -1,0 +1,37 @@
+appId: skaldpro.sklad
+productName: Склад ПРО
+copyright: Склад ПРО
+
+directories:
+  output: dist-electron
+  buildResources: build
+
+# В дистрибутив попадают только файлы оболочки; сервер и фронт — через extraResources.
+files:
+  - main.cjs
+  - preload.cjs
+  - settings.html
+
+extraResources:
+  # PyInstaller-сборка сервера (onedir)
+  - from: ../../server/dist/sklad-server
+    to: sklad-server
+  # Собранный фронтенд, который раздаёт сам сервер
+  - from: ../../web/dist
+    to: web/dist
+
+win:
+  target:
+    - portable
+    - nsis
+  # иконка (png 256x256 — electron-builder сам сделает .ico)
+  icon: build/icon.png
+
+portable:
+  artifactName: Склад ПРО portable ${version}.exe
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  artifactName: Склад ПРО Setup ${version}.exe

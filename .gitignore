@@ -1,0 +1,23 @@
+# Зависимости / сборки
+node_modules/
+web/dist/
+server/dist/
+server/build/
+packaging/electron/node_modules/
+packaging/electron/dist-electron/
+
+# Python
+**/__pycache__/
+*.pyc
+.pytest_cache/
+
+# Данные и база (секреты не в репозиторий)
+data/
+*.db*
+*.log
+
+# Кэши инструментов
+.codegraph/
+.playwright-mcp/
+.vite/
+.venv/

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Настройки — Склад ПРО</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 24px; color: #222; }
+  h2 { margin: 0 0 16px; font-size: 18px; }
+  .card { border: 1px solid #ddd; border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; cursor: pointer; }
+  .card:hover { background: #f5f8ff; border-color: #4a7dff; }
+  .card b { display: block; margin-bottom: 4px; }
+  .card span { font-size: 13px; color: #666; }
+  input { width: 100%; box-sizing: border-box; margin-top: 10px; padding: 8px 10px;
+          border: 1px solid #ccc; border-radius: 6px; font-size: 14px; display: none; }
+  .card.net-open input { display: block; }
+  button { margin-top: 12px; padding: 8px 16px; border: 0; border-radius: 6px;
+           background: #4a7dff; color: #fff; font-size: 14px; cursor: pointer; display: none; }
+  .card.net-open + button { display: inline-block; }
+</style>
+</head>
+<body>
+  <h2>Как вы работаете со складом?</h2>
+  <div class="card" id="local">
+    <b>Локально (на этом компьютере)</b>
+    <span>Приложение само запустит сервер и будет работать с базой на этом ПК.</span>
+  </div>
+  <div class="card" id="net">
+    <b>В сети (сервер на другом компьютере)</b>
+    <span>Введите адрес, по которому работает сервер «Склад ПРО» (IP или имя).</span>
+    <input id="url" type="text" placeholder="например, 192.168.1.10:8700" spellcheck="false">
+  </div>
+  <button id="netGo">Подключиться</button>
+  <script>
+    document.getElementById('local').addEventListener('click', () => sklad.chooseLocal());
+    const net = document.getElementById('net');
+    const input = document.getElementById('url');
+    net.addEventListener('click', (e) => {
+      if (e.target === input) return;
+      net.classList.toggle('net-open');
+      if (net.classList.contains('net-open')) input.focus();
+    });
+    document.getElementById('netGo').addEventListener('click', () => {
+      if (input.value.trim()) sklad.chooseNetwork(input.value);
+    });
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && input.value.trim()) sklad.chooseNetwork(input.value);
+    });
+  </script>
+</body>
+</html>

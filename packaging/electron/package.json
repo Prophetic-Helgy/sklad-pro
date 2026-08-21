@@ -1,0 +1,12 @@
+{
+  "name": "sklad-pro",
+  "productName": "Склад ПРО",
+  "version": "1.0.0",
+  "description": "Складской учёт (замена Склад ПРО 7.1 xlsm)",
+  "main": "main.cjs",
+  "private": true,
+  "devDependencies": {
+    "electron": "^37.0.0",
+    "electron-builder": "^26.0.0"
+  }
+}
