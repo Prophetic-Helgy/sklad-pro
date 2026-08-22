@@ -33,6 +33,18 @@ body {
   z-index: 10;
 }
 
+.app-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-logo {
+  width: 34px;
+  height: 34px;
+  display: block;
+}
+
 .app-title {
   font-size: 18px;
   font-weight: 600;

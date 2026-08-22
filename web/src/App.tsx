@@ -72,7 +72,10 @@ export default function App() {
               <AntApp>
               <Layout style={{ minHeight: '100vh' }}>
                 <Layout.Header className="app-header" style={{ padding: 0 }}>
-                  <span className="app-title">Склад ПРО</span>
+                  <span className="app-brand">
+                    <img className="app-logo" src="/logo.png" alt="Склад ПРО" />
+                    <span className="app-title">Склад ПРО</span>
+                  </span>
                   <span>
                     {user.full_name || user.username}
                     {user.role === 'admin' && ' (администратор)'}
