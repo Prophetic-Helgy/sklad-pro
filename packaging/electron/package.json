@@ -1,7 +1,7 @@
 {
   "name": "sklad-pro",
   "productName": "Склад ПРО",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Складской учёт (замена Склад ПРО 7.1 xlsm)",
   "main": "main.cjs",
   "private": true,

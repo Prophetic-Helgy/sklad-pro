@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
-import { DatePicker, Input, Select, Space, Table, type GetProps, type TableProps } from 'antd'
-import { SearchOutlined } from '@ant-design/icons'
+import { Button, DatePicker, Input, Select, Space, Table, type GetProps, type TableProps } from 'antd'
+import { ArrowLeftOutlined, SearchOutlined } from '@ant-design/icons'
 import { useNavigate, useParams } from 'react-router-dom'
 import { listRegistry, type JournalRow } from '../api/registry'
 import { listPartners, type Partner } from '../api/references'
@@ -113,6 +113,7 @@ export default function Registry() {
               options={partners.map((p) => ({ value: p.id, label: p.full_name }))}
             />
           )}
+          <Button type="text" icon={<ArrowLeftOutlined />} title="Назад в главное меню" onClick={() => navigate('/')} />
           <Input
             allowClear
             prefix={<SearchOutlined />}

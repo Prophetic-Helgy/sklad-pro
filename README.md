@@ -15,9 +15,10 @@ A complete replacement of the Excel workbook «Склад ПРО 7.1»: referenc
 [![SQLite](https://img.shields.io/badge/SQLite-WAL-003B57?logo=sqlite&logoColor=white)](https://www.sqlite.org/)
 [![Electron](https://img.shields.io/badge/Electron-37-47848F?logo=electron&logoColor=white)](https://www.electronjs.org/)
 [![Windows](https://img.shields.io/badge/Windows-x64-0078D6?logo=windows&logoColor=white)]
-[![Status](https://img.shields.io/badge/Status-Stable%201.0.0-green)]
+[![Status](https://img.shields.io/badge/Status-Stable%201.0.1-green)]
+[![License](https://img.shields.io/badge/License-Proprietary%20%C2%B7%20Free-555555)](LICENSE)
 
-**Stable · v1.0.0**
+**Stable · v1.0.1**
 
 **Language: [English](#english) | [Русский](#русский)**
 
@@ -184,6 +185,10 @@ sklad-pro/
 
 «Склад ПРО» was created as a direct replacement of the Excel workbook *Склад ПРО 7.1*, which many small warehouses have been running on for years. What the new app brings: a native application instead of a macro file (no “macro security” prompts, no Excel versions to worry about), reliable stock based on database transactions, user roles and an audit log, configurable negative-stock control, printable invoices in the familiar 7.1 layout, reports with XLSX/PDF export, and a one-way street out of 7.1 — import, reconcile, done.
 
+## License
+
+Proprietary, source-available. The current release (v1.0.x) is **free for personal and commercial use**; all other rights are reserved, and future versions/editions may be released under paid terms. See the [LICENSE](LICENSE) file for the full text.
+
 **Copyright © 2026. All rights reserved.**
 
 ---
@@ -346,5 +351,9 @@ sklad-pro/
 ## О проекте
 
 «Склад ПРО» создан как прямая замена Excel-книги *Склад ПРО 7.1*, на которой многие небольшие склады работают годами. Что даёт новая программа: нативное приложение вместо макрос-файла (без вопросов «Безопасность макросов» и привязки к версии Excel), надёжные остатки на базе транзакций базы данных, роли пользователей и журнал аудита, настраиваемый контроль отрицательного остатка, печатные накладные в привычном макете 7.1, отчёты с экспортом в XLSX/PDF и односторонний выезд из 7.1 — импортировать, сверить, пользоваться.
+
+## Лицензия
+
+Проприетарная лицензия, исходный код открыт. Текущий релиз (v1.0.x) — **бесплатно для личных и коммерческих целей**; остальные права сохранены, будущие версии и издания могут выходить на платных условиях. Полный текст — в файле [LICENSE](LICENSE).
 
 **Copyright © 2026. All rights reserved.**

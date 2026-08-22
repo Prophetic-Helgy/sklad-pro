@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useState } from 'react'
-import { Checkbox, Input, Select, Space, Table, Tag } from 'antd'
-import { SearchOutlined } from '@ant-design/icons'
+import { Button, Checkbox, Input, Select, Space, Table, Tag } from 'antd'
+import { ArrowLeftOutlined, SearchOutlined } from '@ant-design/icons'
+import { useNavigate } from 'react-router-dom'
 import { listStock, type StockRow } from '../api/stock'
 import { listWarehouses, type Warehouse } from '../api/references'
 
 /** Экран «Склад» — текущие остатки по позициям и складам (в 7.1 — расчётные формулы). */
 export default function Stock() {
+  const navigate = useNavigate()
   const [rows, setRows] = useState<StockRow[]>([])
   const [total, setTotal] = useState(0)
   const [q, setQ] = useState('')
@@ -55,6 +57,7 @@ export default function Stock() {
           >
             Ниже минимума
           </Checkbox>
+          <Button type="text" icon={<ArrowLeftOutlined />} title="Назад в главное меню" onClick={() => navigate('/')} />
           <Input
             allowClear
             prefix={<SearchOutlined />}

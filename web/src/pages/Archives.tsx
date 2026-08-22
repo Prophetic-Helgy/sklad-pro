@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
-import { Card, Empty, Input, Select, Space, Table, Tag } from 'antd'
-import { SearchOutlined } from '@ant-design/icons'
+import { Button, Card, Empty, Input, Select, Space, Table, Tag } from 'antd'
+import { ArrowLeftOutlined, SearchOutlined } from '@ant-design/icons'
 import dayjs from 'dayjs'
 import { useNavigate } from 'react-router-dom'
 import { listDocs, type Doc, type DocType } from '../api/documents'
@@ -65,6 +65,7 @@ export default function Archives() {
             onChange={(v) => { setType(v); setPage(1) }}
             options={[{ value: 'all', label: 'Все типы' }, ...Object.entries(TYPE_LABELS).map(([value, label]) => ({ value, label }))]}
           />
+          <Button type="text" icon={<ArrowLeftOutlined />} title="Назад в главное меню" onClick={() => navigate('/')} />
           <Input
             allowClear
             prefix={<SearchOutlined />}

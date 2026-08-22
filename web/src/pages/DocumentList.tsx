@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Button, Input, Space, Table, Tag } from 'antd'
-import { PlusOutlined, SearchOutlined } from '@ant-design/icons'
+import { ArrowLeftOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons'
 import { useNavigate, useParams } from 'react-router-dom'
 import { listDocs, type Doc, type DocType } from '../api/documents'
 
@@ -52,6 +52,7 @@ export default function DocumentList() {
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16, flexWrap: 'wrap', gap: 8 }}>
         <h2 style={{ margin: 0 }}>{cfg.title}</h2>
         <Space>
+          <Button type="text" icon={<ArrowLeftOutlined />} title="Назад в главное меню" onClick={() => navigate('/')} />
           <Input
             allowClear
             prefix={<SearchOutlined />}

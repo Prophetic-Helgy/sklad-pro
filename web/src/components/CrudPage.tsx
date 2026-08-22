@@ -3,7 +3,8 @@ import {
   App as AntApp, Button, Input, Modal, Popconfirm, Select, Space, Switch, Table,
   type TableColumnsType,
 } from 'antd'
-import { PlusOutlined, SearchOutlined } from '@ant-design/icons'
+import { ArrowLeftOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons'
+import { useNavigate } from 'react-router-dom'
 
 /** Селект с одноразовой (ленивой) загрузкой опций. */
 function LazySelect({ load, value, onChange, placeholder }: {
@@ -72,6 +73,7 @@ export default function CrudPage<T extends { id: number }>({
   title, load, create, update, remove, deactivate, columns, fields,
   searchPlaceholder, addLabel = 'Добавить',
 }: CrudPageProps<T>) {
+  const navigate = useNavigate()
   const { message } = AntApp.useApp()
   const [rows, setRows] = useState<T[]>([])
   const [total, setTotal] = useState(0)
@@ -227,6 +229,7 @@ export default function CrudPage<T extends { id: number }>({
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16, flexWrap: 'wrap', gap: 8 }}>
         {title && <h2 style={{ margin: 0 }}>{title}</h2>}
         <Space>
+          <Button type="text" icon={<ArrowLeftOutlined />} title="Назад в главное меню" onClick={() => navigate('/')} />
           <Input
             allowClear
             prefix={<SearchOutlined />}
